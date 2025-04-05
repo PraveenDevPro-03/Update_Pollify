@@ -33,9 +33,9 @@ class UserManager {
     static updateAuthLink() {
         const authLink = document.getElementById('authLink');
         if (authLink) {
-            authLink.textContent = this.currentUser ? `🚪 Logout (${this.currentUser})` : '🚪 Login';
+            authLink.textContent = this.currentUser ? `🚪 Logout (${this.currentUser})` : '🚪Login';
             authLink.href = 'javascript:void(0);';
-            authLink.onclick = this.currentUser ? () => this.logout() : () => window.location.href = 'login.html';
+            authLink.onclick = this.currentUser ? () => this.logout() : () => window.location.href = '/login';
         }
     }
 
@@ -393,15 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // YouTube Sub-menu
-    const youtubeMenu = document.querySelector('.youtube-menu');
-    const youtubeSubMenu = document.getElementById('youtubeSubMenu');
-    if (youtubeMenu && youtubeSubMenu) {
-        youtubeMenu.addEventListener('click', (e) => {
-            e.preventDefault();
-            youtubeSubMenu.style.display = youtubeSubMenu.style.display === 'block' ? 'none' : 'block';
-        });
-    }
+
 
     // Login/Signup Forms
     const signInForm = document.getElementById('signInForm');
@@ -429,3 +421,5 @@ function toggleForm() {
     const container = document.querySelector('.container');
     container.classList.toggle('active');
 }
+
+
